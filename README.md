@@ -26,14 +26,14 @@ Each implementation has its own specific requirements. Please refer to the READM
 
 ## Implementation Requests & Status
 
-Want to see an implementation in your preferred language or framework? [Submit your request here](#) _(Coming Soon)_
+Want to see an implementation in your preferred language or framework? [Submit your request here](https://forms.gle/FVvMKwrpmUzZx2fs9)
 
 ### Current Implementation Requests Status
 
 | Language/Framework | Status | Total Requests | Target Date |
 |-------------------|---------|----------------|-------------|
-| Vue.js | 🔵 Planned | 15 | Q4 2024 |
-| React.js | 🔵 Planned | 12 | Q4 2024 |
+| Vue.js | 🔵 Planned | 1 | End of Q4 2024 |
+| React.js | 🔵 Planned | 1 | End of Q4 2024 |
 
 **Status Legend:**
 - 🟢 Completed: Implementation is available
