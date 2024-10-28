@@ -33,10 +33,6 @@ Thank you to all the contributors who have helped make this project better!
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Code of Conduct
-
-By participating in this project, you agree to abide by our Code of Conduct (see CODE_OF_CONDUCT.md).
-
 ## Recognition
 
 Contributors are recognized in the following ways:
