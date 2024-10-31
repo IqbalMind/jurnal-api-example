@@ -32,7 +32,7 @@ Want to see an implementation in your preferred language or framework? [Submit y
 
 | Language/Framework | Status | Total Requests | Target Date |
 |-------------------|---------|----------------|-------------|
-| Vue.js | 🔵 Planned | 1 | End of Q4 2024 |
+| Vue.js | 🟢 Completed | 12 | End of Q4 2024 |
 | React.js | 🔵 Planned | 1 | End of Q4 2024 |
 
 **Status Legend:**
