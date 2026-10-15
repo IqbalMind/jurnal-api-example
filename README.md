@@ -168,6 +168,8 @@ Every stack is structured with a reusable client, complete examples for CRUD / q
 
 All requested and primary language stacks have been **completed and released today**. There is no pending backlog.
 
+Want to see an implementation in your preferred language or framework? **[Submit your request here](https://forms.gle/FVvMKwrpmUzZx2fs9)**
+
 | Language / Framework | Status | Release Date |
 |---|---|---|
 | **Python** | 🟢 Released | Today |
