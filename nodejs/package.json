@@ -1,0 +1,20 @@
+{
+  "name": "jurnal-api-nodejs",
+  "version": "1.0.0",
+  "description": "Mekari Jurnal API integration example in Node.js with HMAC-SHA256 authentication",
+  "main": "JurnalApi.js",
+  "scripts": {
+    "start": "node example.js"
+  },
+  "keywords": [
+    "mekari",
+    "jurnal",
+    "hmac",
+    "api"
+  ],
+  "author": "IqbalMind",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.0"
+  }
+}

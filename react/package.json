@@ -1,0 +1,23 @@
+{
+  "name": "jurnal-api-react",
+  "version": "1.0.0",
+  "description": "Mekari Jurnal API integration example with React.js frontend and Node.js backend proxy for HMAC-SHA256 authentication",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mekari",
+    "jurnal",
+    "react",
+    "hmac"
+  ],
+  "author": "IqbalMind",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

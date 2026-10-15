@@ -1,0 +1,26 @@
+{
+  "id": "mekari-jurnal-env",
+  "name": "Mekari Jurnal API Environment",
+  "values": [
+    {
+      "key": "BASE_URL",
+      "value": "https://sandbox-api.mekari.com",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "CLIENT_ID",
+      "value": "YOUR_CLIENT_ID",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "CLIENT_SECRET",
+      "value": "YOUR_CLIENT_SECRET",
+      "type": "secret",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2026-10-15T00:00:00.000Z"
+}

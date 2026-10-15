@@ -6,10 +6,26 @@ Thank you to all the contributors who have helped make this project better!
 
 - [IqbalMind](https://github.com/iqbalmind) - Project Maintainer
 
-## PHP Implementation
-- [IqbalMind](https://github.com/iqbalmind) - Native PHP Implementation
-- [IqbalMind](https://github.com/iqbalmind) - CodeIgniter Integration
-- [IqbalMind](https://github.com/iqbalmind) - Laravel 11 Integration
+## Implementations & Stacks
+- Python 3 Client
+- Node.js Client
+- Java (Standard JDK 11+)
+- .NET / C# (.NET 8)
+- Go (Golang) Client
+- Swift (iOS / macOS, CryptoKit)
+- Kotlin (Android / Ktor / Spring)
+- Next.js 14+ (App Router Route Handlers)
+- Google Apps Script (Google Sheets Direct Integration)
+- Dart & Flutter Client
+- Ruby (Net::HTTP & OpenSSL)
+- Bash / cURL CLI Script
+- Rust (Async Tokio / Reqwest)
+- Native PHP & cURL
+- Laravel 11 Integration
+- CodeIgniter Integration
+- React.js Example with Backend Proxy
+- Vue.js Example with Backend Proxy
+- Postman Collection & Pre-request Script
 
 ## How to Get Listed as a Contributor
 

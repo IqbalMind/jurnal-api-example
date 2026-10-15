@@ -26,8 +26,12 @@ class JurnalApi {
         ];
     }
 
-    public function request($method, $path, $data = null) {
+    public function request($method, $path, $data = null, array $queryParams = []) {
         $method = strtoupper($method);
+        if (!empty($queryParams)) {
+            $queryString = http_build_query($queryParams);
+            $path .= (strpos($path, '?') === false ? '?' : '&') . $queryString;
+        }
         $signatureData = $this->generateSignature($method, $path);
         $hmacHeader = 'hmac username="' . $this->hmacUsername . '", algorithm="hmac-sha256", headers="date request-line", signature="' . $signatureData['signature'] . '"';
         
@@ -134,19 +138,19 @@ class JurnalApi {
     }
     
     // Helper methods for common HTTP verbs
-    public function get($path) {
-        return $this->request('GET', $path);
+    public function get($path, array $queryParams = []) {
+        return $this->request('GET', $path, null, $queryParams);
     }
     
-    public function post($path, $data) {
-        return $this->request('POST', $path, $data);
+    public function post($path, $data, array $queryParams = []) {
+        return $this->request('POST', $path, $data, $queryParams);
     }
     
-    public function put($path, $data) {
-        return $this->request('PUT', $path, $data);
+    public function put($path, $data, array $queryParams = []) {
+        return $this->request('PUT', $path, $data, $queryParams);
     }
     
-    public function delete($path) {
-        return $this->request('DELETE', $path);
+    public function delete($path, array $queryParams = []) {
+        return $this->request('DELETE', $path, null, $queryParams);
     }
 }

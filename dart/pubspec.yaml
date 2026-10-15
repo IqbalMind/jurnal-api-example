@@ -1,0 +1,12 @@
+name: jurnal_api_example
+description: Mekari Jurnal Open API client with HMAC-SHA256 authentication for Dart and Flutter.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  crypto: ^3.0.3
+  http: ^1.2.0
+  intl: ^0.19.0

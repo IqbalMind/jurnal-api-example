@@ -1,84 +1,46 @@
 # Mekari Jurnal API Example with Vue.js
 
-This example demonstrates how to integrate the Mekari Jurnal API with a Vue.js frontend, using a Node.js backend to securely handle HMAC authentication. 
+This example demonstrates how to integrate the Mekari Jurnal Open API with a Vue.js frontend, using a Node.js backend to securely handle HMAC-SHA256 authentication.
 
-## Overview
+## Architecture Overview
 
-This setup includes:
-1. **Vue.js** frontend to display data.
-2. **Node.js** backend (with Express) to securely generate HMAC signatures and interact with the Jurnal API.
+1. **Vue.js** frontend to display data and interact with the user.
+2. **Node.js** backend (Express) to securely generate HMAC signatures with `CLIENT_ID` and `CLIENT_SECRET` and proxy calls to the Mekari Jurnal Open API.
 
-Since HMAC signatures require sensitive credentials, it’s recommended to handle the signing process on the server and then call this server from the Vue frontend.
+> ⚠️ **Important Security Note**: Client secrets must **never** be stored or signed inside client-side Vue code running in the browser, as they can be easily extracted by users. Always sign requests server-side!
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) and npm installed.
-- Basic knowledge of Vue.js and Node.js.
+- [Node.js](https://nodejs.org/) (v16+) and npm installed.
+- Valid Mekari Jurnal HMAC credentials. Follow the [Credentials Guide Slide](https://docs.google.com/presentation/d/1Oc5Z_2BoQX6cm6wQ_l1nkScWfSORv_rpT-d-c4WE8xM/edit?usp=sharing).
 
-## Setup
+## Setup & Running
 
-### 1. Clone the Repository
-
+### 1. Install Backend Dependencies
 ```bash
-git clone https://github.com/your-username/jurnal-api-example.git
-cd jurnal-api-example
-```
-
-### 2. Backend Setup
-Navigate to the backend folder (e.g., jurnal-backend) and install dependencies:
-```bash
-cd jurnal-backend
+cd Vue.js
 npm install
 ```
 
-**Configuration**
-1. Open index.js in the jurnal-backend folder.
-2. Set your HMAC credentials:
-  - Replace your-username and your-secret with your actual Mekari Jurnal API HMAC username and secret.
-  - 
-**Running the Backend**
-Start the backend server:
+### 2. Configure Credentials & Start Backend
+Set your credentials in terminal or inside `index.js`:
 ```bash
-node index.js
+export JURNAL_CLIENT_ID="your_client_id"
+export JURNAL_CLIENT_SECRET="your_client_secret"
+export JURNAL_ENV="sandbox" # or "production"
+
+npm start
 ```
 
-This will start the server on http://localhost:3000, which will handle requests from the Vue.js frontend.
+The backend server runs on `http://localhost:3000`.
 
-### 3. Vue.js Frontend Setup
-Navigate to the Vue.js project folder (e.g., jurnal-api-vue) and install dependencies:
-```bash
-cd jurnal-api-vue
-npm install
-```
-**Running the Frontend**
-Start the Vue development server:
-
-```bash
-npm run serve
-The Vue app will run at http://localhost:8080 (or the port shown in your terminal).
+### 3. Frontend Usage
+In your Vue component (`src/App.vue`), make API calls to the backend proxy:
+```javascript
+const response = await axios.get(`http://localhost:3000/api/sales-invoices/${this.invoiceId}`);
+this.invoiceData = response.data;
 ```
 
-## Usage
-1. Open the Vue app in your browser.
-2. Enter an Invoice ID in the input field.
-3. Click "Get Sales Invoice" to fetch and display invoice data from the Jurnal API.
-
-```bash
-jurnal-api-example/
-├── jurnal-backend/          # Node.js backend to generate HMAC signature
-│   ├── index.js             # Main server file with HMAC generation and Jurnal API call
-│   └── package.json         # Backend dependencies
-└── jurnal-api-vue/          # Vue.js frontend to interact with backend
-    ├── src/
-    │   ├── App.vue          # Main Vue component with invoice fetching
-    │   └── ...
-    └── package.json         # Frontend dependencies
-```
-
-## Configuration
-### Environment:
-The backend uses sandbox-api.mekari.com for testing (staging). For production, replace with api.mekari.com.
-
-### Dependencies:
-**Backend**: Express, Axios, Crypto.
-**Frontend**: Axios for API calls.
+## Available Endpoints
+- `GET /api/sales-invoices/:id` - Retrieve sales invoice details.
+- `GET /api/sales-invoices?page=1&page_size=10` - List sales invoices with pagination.

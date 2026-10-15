@@ -1,0 +1,3 @@
+source 'https://rubygems.org'
+
+# Zero mandatory gems: uses standard library (net/http, openssl, base64, time, json)
